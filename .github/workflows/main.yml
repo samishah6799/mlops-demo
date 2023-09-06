@@ -1,17 +1,17 @@
-name: Push Event workflow
+name: Push Event Workflow
 
 on: push
-
+    
 jobs:
-    unit_testing:
-        runs-on: ubuntu-latest
+  unit-testing:
+    runs-on: ubuntu-latest
 
-        steps:
-        - name: Checkout code
-          uses: actions/checkout@v2
-
-        - name: Install Package
-          uses: pip install pytest
-
-        - name: Run Tests
-          uses: pytest test.py
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Install Package
+      run: pip install pytest
+      
+    - name: Run tests
+      run: pytest test.py
