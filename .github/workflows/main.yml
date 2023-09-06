@@ -4,14 +4,14 @@ on: push
 
 jobs:
     unit_testing:
-    runs-on: ubuntu-latest
+        runs-on: ubuntu-latest
 
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
 
-    - name: Install Package
-      uses: pip install pytest
+        - name: Install Package
+          uses: pip install pytest
 
-    - name: Run Tests
-      uses: pytest test.py
+        - name: Run Tests
+          uses: pytest test.py
