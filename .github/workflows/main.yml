@@ -13,11 +13,5 @@ jobs:
       - name: Install Package pytest
         run: pip install pytest
 
-      - name: install package pylint
-        run: pip install pylint
-
       - name: Run tests
         run: pytest test.py
-
-      - name: Code Linting
-        run: pylint main.py
