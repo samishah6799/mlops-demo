@@ -1,4 +1,3 @@
 flask
-sklearn
 pylint
 pytest
