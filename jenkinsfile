@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('checkout') {
             steps {
-                echo 'Hello World'
+                git branch: 'main', url: 'https://github.com/samishah6799/mlops-demo.git'
             }
         }
         
