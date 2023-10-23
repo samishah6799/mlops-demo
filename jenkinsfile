@@ -1,3 +1,4 @@
+def data = 'load example.groovy'
 pipeline {
     agent any
 
@@ -26,17 +27,9 @@ pipeline {
             steps {
                 script {
                     def SERVER = "PROD"
-                    deploy(SERVER)
+                    data.deploy(SERVER)
                 }
             }
         }
-    }
-}
-
-def void deploy(String server_name) {
-    if (server_name == "PROD") {
-        println "Deploying to production"
-    } else {
-        println "Deploying to development"
     }
 }
