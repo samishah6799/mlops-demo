@@ -24,7 +24,8 @@ pipeline {
         
         stage('Deploy') {
             steps {
-                echo 'Deploying.'
+                echo "BRANCH NAME : ${env.BRANCH_NAME}"
+                echo "BUILD ID : ${env.BUILD_ID}"
             }
         }
     }
