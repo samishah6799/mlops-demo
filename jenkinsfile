@@ -25,7 +25,7 @@ pipeline {
         stage('Deploy') {
             environments {
                 SERVER_NAME = "EC2"
-                SERVER_ID = credentials("jenkins_github_credentials")
+                SERVER_ID = credentials("jenkins-github-credentials")
             }
             steps {
                 echo "BRANCH NAME : ${env.BRANCH_NAME}"
