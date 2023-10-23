@@ -30,7 +30,7 @@ pipeline {
             steps {
                 echo "BRANCH NAME : ${env.BRANCH_NAME}"
                 echo "BUILD ID : ${env.BUILD_ID}"
-                echo "Credentials : ${env.SERVER_ID}
+                echo "Credentials : ${env.SERVER_ID}"
             }
         }
     }
