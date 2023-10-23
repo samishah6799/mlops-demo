@@ -1,3 +1,4 @@
+def code = load 'example.groovy'
 pipeline {
     agent any
 
@@ -24,7 +25,8 @@ pipeline {
         
         stage('Deploy') {
             steps {
-                echo 'Deploy'
+                def branch_name = "${env.BRANCH_NAME}"
+                code.deploy(branch_name)
             }
         }
     }
