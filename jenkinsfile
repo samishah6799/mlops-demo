@@ -1,4 +1,4 @@
-def data =  load 'example.groovy'
+
 pipeline {
     agent any
 
@@ -26,6 +26,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
+                    def data =  load 'example.groovy'
                     def SERVER = "PROD"
                     data.deploy(SERVER)
                 }
