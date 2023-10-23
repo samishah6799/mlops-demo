@@ -23,14 +23,15 @@ pipeline {
         }
         
         stage('Deploy') {
-            environment {
-                SERVER_NAME = "EC2"
-                SERVER_ID = credentials("jenkins-github-credentials")
-            }
             steps {
-                echo "BRANCH NAME : ${env.BRANCH_NAME}"
-                echo "BUILD ID : ${env.BUILD_ID}"
-                echo "Credentials : ${env.SERVER_ID}"
+                script {
+                    def SERVER = "PROD"
+                    if (SERVER == "PROD") {
+                        println "Deploying to production."
+                    } else {
+                        println "Deploying to test."
+                    }
+                }
             }
         }
     }
