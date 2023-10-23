@@ -26,13 +26,17 @@ pipeline {
             steps {
                 script {
                     def SERVER = "PROD"
-                    if (SERVER == "PROD") {
-                        println "Deploying to production."
-                    } else {
-                        println "Deploying to test."
-                    }
+                    deploy(SERVER)
                 }
             }
         }
+    }
+}
+
+def void deploy(String server_name) {
+    if (server_name == "PROD") {
+        println "Deploying to production"
+    } else {
+        println "Deploying to development"
     }
 }
