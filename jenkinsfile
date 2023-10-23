@@ -23,7 +23,7 @@ pipeline {
         }
         
         stage('Deploy') {
-            environments {
+            environment {
                 SERVER_NAME = "EC2"
                 SERVER_ID = credentials("jenkins-github-credentials")
             }
