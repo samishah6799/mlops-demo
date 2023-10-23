@@ -6,5 +6,6 @@ def deploy(String branch_name) {
   } else {
     println "Deploying to Dev."
   }
+}
 
   return this
