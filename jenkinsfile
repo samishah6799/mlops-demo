@@ -24,11 +24,7 @@ pipeline {
         
         stage('Deploy') {
             steps {
-                script {
-                    def code = load "example.groovy"
-                    def branch_name = "${env.BRANCH_NAME}"
-                    code.deploy(branch_name)
-                }
+                echo 'Deploying.'
             }
         }
     }
