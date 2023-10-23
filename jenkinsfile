@@ -1,4 +1,4 @@
-def data = 'load example.groovy'
+def data =  load 'example.groovy'
 pipeline {
     agent any
 
