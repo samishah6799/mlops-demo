@@ -8,19 +8,16 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/samishah6799/mlops-demo.git'
             }
         }
-        stage('Loading file') {
+        stage('Build') {
             steps {
                 script {
                     def data =  load 'example.groovy'
+                    data.build()
+                    // echo 'Building'
+                    // sh 'pip3 install -r requirements.txt'
                 }
             }
         }
-//        stage('Build') {
-//            steps {
-//                echo 'Building'
-//                sh 'pip3 install -r requirements.txt'
-//            }
-//        }
         
 //        stage('Test') {
 //            steps {
