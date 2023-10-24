@@ -4,27 +4,30 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Check out your code from the Git repository
                 checkout scm
             }
         }
-
-        stage('Deploy') {
-            steps {
-                script {
-                    // Load and run the Groovy script containing the deploy method
-                    def myScript = load 'example.groovy'
-                    myScript.deploy("PROD")
-                }
-            }
-        }
-
         stage('Build') {
             steps {
                 script {
-                    // Load and run the Groovy script containing the build method
                     def myScript = load 'example.groovy'
-                    myScript.build("some_parameter_value")
+                    myScript.build()
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                script {
+                    def myScript = load 'example.groovy'
+                    myScript.test()
+                }
+           }
+        }
+        stage('Deploy') {
+            steps {
+                script {
+                    def myScript = load 'example.groovy'
+                    myScript.deploy("PROD")
                 }
             }
         }
