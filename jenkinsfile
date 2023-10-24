@@ -3,17 +3,16 @@ pipeline {
     agent any
 
     stages {
-        stage('Loading file') {
-            script {
-                def data =  load 'example.groovy'
-            }
-        }
         stage('checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/samishah6799/mlops-demo.git'
             }
         }
-        
+        stage('Loading file') {
+            script {
+                def data =  load 'example.groovy'
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building'
