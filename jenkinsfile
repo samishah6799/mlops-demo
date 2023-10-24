@@ -32,7 +32,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    // def data =  load 'example.groovy'
+                    def data =  load 'example.groovy'
                     def SERVER = "PROD"
                     data.deploy(SERVER)
                 }
