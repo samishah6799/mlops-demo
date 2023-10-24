@@ -10,7 +10,7 @@ def deploy(String branch_name) {
 
 def build() {
     println "Building"
-    sh 'pip3 install -r requirements.txt'
+    // sh 'pip3 install -r requirements.txt'
 }
 
   return this
