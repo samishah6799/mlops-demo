@@ -3,8 +3,10 @@ pipeline {
     agent any
 
     stages {
-        script {
-            def data =  load 'example.groovy'
+        stage('Loading file') {
+            script {
+                def data =  load 'example.groovy'
+            }
         }
         stage('checkout') {
             steps {
