@@ -12,7 +12,8 @@ pipeline {
                 script {
                     def myScript = load 'example.groovy'
                     //myScript.deploy("PROD")
-                    myScript.build("HOJA BHAI")
+                    def VARIABLEE = "HOJA BHAI"
+                    myScript.build(VARIABLEE)
                 }
             }
         }
