@@ -11,29 +11,12 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    def d =  load 'example.groovy'
-                    d.build()
+                    def data =  load 'example.groovy'
+                    data.build()
                     // echo 'Building'
                     // sh 'pip3 install -r requirements.txt'
                 }
             }
         }
-        
-//        stage('Test') {
-//            steps {
-//                echo 'Test'
-//                sh 'python3 test.py'
-//           }
-//        }
-        
-//        stage('Deploy') {
-//            steps {
-//                script {
-//                    def data =  load 'example.groovy'
-//                    def SERVER = "PROD"
-//                    data.deploy(SERVER)
-//                }
-//            }
-//        }
     }
 }
