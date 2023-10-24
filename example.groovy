@@ -8,7 +8,7 @@
 //   }
 // }
 
-def build() {
+def build(String ok) {
   println "Building"
   sh 'pip3 install -r requirements.txt'
 }
