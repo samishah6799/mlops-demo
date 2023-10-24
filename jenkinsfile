@@ -11,8 +11,8 @@ pipeline {
             steps {
                 script {
                     def myScript = load 'example.groovy'
-                    myScript.deploy("PROD")
-                    myScript.build("NONE")
+                    //myScript.deploy("PROD")
+                    myScript.build()
                 }
             }
         }
