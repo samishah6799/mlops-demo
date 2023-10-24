@@ -8,7 +8,7 @@ def deploy(String branch_name) {
   }
 }
 
-def build() {
+def build(String branch_name) {
   println "Building"
   sh 'pip3 install -r requirements.txt'
 }
