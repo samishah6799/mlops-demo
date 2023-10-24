@@ -7,11 +7,11 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/samishah6799/mlops-demo.git'
             }
         }
-        stage('Build') {
+        stage('Deploy') {
             steps {
                 script {
-                    def myScript = load 'example.groovy'
-                    myScript.build()
+                    //def myScript = load 'example.groovy'
+                    myScript.deploy("PROD")
                 }
             }
         }
