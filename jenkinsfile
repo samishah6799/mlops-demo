@@ -2,35 +2,33 @@ pipeline {
     agent any
 
     stages {
-        stage('checkout') {
+        stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/samishah6799/mlops-demo.git'
+                checkout scm
             }
         }
-        
         stage('Build') {
             steps {
-                echo 'Building'
-                sh 'pip3 install -r requirements.txt'
+                script {
+                    def myScript = load 'example.groovy'
+                    myScript.build()
+                }
             }
         }
-        
         stage('Test') {
             steps {
-                echo 'Test'
-                sh 'python3 test.py'
-            }
+                script {
+                    def myScript = load 'example.groovy'
+                    myScript.test()
+                }
+           }
         }
-        
         stage('Deploy') {
-            environment {
-                SERVER_NAME = "EC2"
-                SERVER_ID = credentials("jenkins-github-credentials")
-            }
             steps {
-                echo "BRANCH NAME : ${env.BRANCH_NAME}"
-                echo "BUILD ID : ${env.BUILD_ID}"
-                echo "Credentials : ${env.SERVER_ID}"
+                script {
+                    def myScript = load 'example.groovy'
+                    myScript.deploy("PROD")
+                }
             }
         }
     }

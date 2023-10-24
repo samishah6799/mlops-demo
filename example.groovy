@@ -8,4 +8,14 @@ def deploy(String branch_name) {
   }
 }
 
-  return this
+def build() {
+  println "Building."
+  sh 'pip3 install -r requirements.txt'
+}
+
+def test() {
+  println "Test."
+  sh '/Users/shehryarsohail-nu/anaconda3/envs/cvlab/bin/python test.py'
+}
+  
+return this
