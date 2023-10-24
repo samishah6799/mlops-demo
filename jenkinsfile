@@ -15,14 +15,5 @@ pipeline {
                 }
             }
         }
-
-        stage('Deploy') {
-            steps {
-                script {
-                    //def myScript = load 'example.groovy'
-                    myScript.deploy("PROD")
-                }
-            }
-        }
     }
 }
