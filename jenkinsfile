@@ -3,6 +3,7 @@ pipeline {
     agent any
 
     stages {
+        def data =  load 'example.groovy'
         stage('checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/samishah6799/mlops-demo.git'
@@ -26,7 +27,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    def data =  load 'example.groovy'
+                    // def data =  load 'example.groovy'
                     def SERVER = "PROD"
                     data.deploy(SERVER)
                 }
